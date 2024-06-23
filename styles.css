@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+header::before {
+  content: "";
+  background-color: #b5838d;
+  clip-path: polygon(100% 0px, 100% 20%, 0 60%, 0px 0px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.about {
+  display: flex;
+  padding: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutImage {
+  max-width: 320px;
+  height: 350px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.aboutImage img {
+  width: 320px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.aboutContent {
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #f2f2f2;
+}
+
+.aboutContent p {
+  padding: 20px 0;
+}
+.social {
+  padding-top: 30px;
+  justify-content: flex-end;
+  display: flex;
+  gap: 15px;
+}
+
+.social img {
+  width: 25px;
+}
+
+h1 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f2f2f2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+@media (max-width: 1000px) {
+  .about {
+    align-items: stretch;
+  }
+  .aboutContent {
+    margin-top: 50px;
+    margin-left: -280px;
+  }
+  .aboutContent::before {
+    content: "";
+    width: 320px;
+    height: 350px;
+    float: left;
+    margin-right: 15px;
+    margin-left: -60px;
+    margin-top: -70px;
+  }
+
+  .social {
+    display: none;
+  }
+  h1 {
+    top: 0;
+    transform: none;
+    left: 80%;
+  }
+}
+
+@media (max-width: 583px) {
+  header::before {
+    height: 70%;
+  }
+  .about {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .aboutContent,
+  .aboutImage {
+    margin: 0;
+    box-shadow: none;
+  }
+  .aboutContent::before {
+    content: none;
+  }
+  h1 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+  }
+}
